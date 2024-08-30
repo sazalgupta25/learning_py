@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+<!-- Replacement for Title -->
+{% block title %}
+Home - Paws Rescue Center
+{% endblock %}
+
+<!-- Replacement for Content -->
+{% block content %}
+<div style="float:right; margin:10px;">
+    <a href="{{url_for('about')}}">
+        About |
+    </a>
+    <a href="{{url_for('homepage')}}">
+      Home | 
+  </a>
+  <a href="{{url_for('login')}}">
+    Login | 
+  </a>
+  <a href="{{url_for('signup')}}">
+    SignUp
+  </a>
+  </div>
+  <table>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Bio</th>
+    </tr>
+    {% for pet in pets %}
+    <tr>
+        <td >
+            <a href="{{url_for('pet_details', pet_id = pet['id'])}}">
+                <img src= "{{url_for('static', filename = pet["id"]|string+".jpg")}}" height="100" >
+            </a>
+        </td>
+        <td>{{ pet["name"] }}</td>
+        <td>{{ pet["age"] }}</td>
+        <td>{{ pet["bio"] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

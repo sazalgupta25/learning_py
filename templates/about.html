@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+<!-- Replacement for Title -->
+{% block title %}
+About - Paws Rescue Center
+{% endblock %}
+
+<!-- Replacement for Content -->
+{% block content %}
+<h1 class="title">About Us:</h1>
+    
+    <div id="content">
+        <p>
+            We are a non-profit organization working as an animal rescue.
+            We aim to help you connect with purrfect furbaby for you!
+            The animals you find at our website are rescued and rehabilitated animals.
+            Our mission is to promote the ideology of "Adopt, don't Shop"!
+        </p>
+    </div>
+    <div style="float:right; margin:10px;">
+        <a href="{{url_for('homepage')}}">
+            Home
+        </a>
+    </div>
+    
+{% endblock %}
